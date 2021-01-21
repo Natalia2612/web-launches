@@ -1,0 +1,71 @@
+@import 'launch','launches';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&family=Nanum+Gothic&display=swap");
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    //font-size: 16px;
+    font-weight: 300;
+}
+:root {
+    --color_1:#25c6bc;
+    --color_2:#495865;
+    --color_3:#1e2e31;
+    --color_4:#fff;
+    --color_5:#000;
+    --color_6:#aa4b7e;
+    --color_7:#3b164b;
+    --color_8:#271f2c;
+}
+header{
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .spaceXLogo {
+        width: 40%;
+    }
+}
+.buttonsContainer{
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .2em;
+    margin-bottom: .7em;
+    .linkLaunch{
+        margin-top: .7em;
+        color:var(--color_5);
+        background-color: var(--color_4);
+        border: .1em solid var(--color_5);
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover{
+            color:var(--color_4);
+            background-color: var(--color_5);
+        }
+    }
+}
+@mixin similar{
+    margin: 0 auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        margin-bottom: 1em;
+        color: var(--color_4);
+        font-size: 20px;
+    }
+}
+.launch{
+    @include similar;
+}
+.launches{
+    @include similar;
+}

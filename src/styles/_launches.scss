@@ -1,0 +1,20 @@
+.launches{
+    width: 70%;
+    background-image: linear-gradient(to right,var(--color_6) 0%, var(--color_7) 100%);
+    &__container{
+        padding: 3em .5em 3em .5em;
+        width: 95%;
+        height: 70vh;
+        background:var(--color_8);
+    }
+    span{
+        color:var(--color_4)
+    }
+    .table__header{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .table_th{
+            border-bottom: 1px solid var(--color_4);
+        }
+    }
+}
