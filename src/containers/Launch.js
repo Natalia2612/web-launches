@@ -1,5 +1,10 @@
 import {useEffect,useState,useRef} from 'react';
 
+import {FacebookShareButton, 
+        FacebookIcon, 
+        WhatsappShareButton,
+        WhatsappIcon} from "react-share";
+
 const Launch=(props)=>{
     const[timerDays, setTimerDays] = useState('00');
     const[timerHours, setTimerHours] = useState('00');
@@ -41,6 +46,7 @@ const Launch=(props)=>{
             clearInterval(someref)
         }
     });
+    let url="https://web-launches.netlify.app/"
     return (
         <div className="launch">
             <h2 className="info_title">Upcoming: {props.launch.name}</h2>
@@ -61,6 +67,23 @@ const Launch=(props)=>{
                     <p>{timerSeconds}</p>
                     <p className="info_data">SECONDS</p>
                 </div>
+            </div>
+            <div className="social_share">
+                <p>Compartir por:</p>
+                <div className="social_share_redes">
+                    <FacebookShareButton url={url} 
+                        quote={"React app Launch Next"}
+                        hashtag="#Next Launch"
+                    >
+                        <FacebookIcon logoFillColor="white" round={true} size="5ex"></FacebookIcon>
+                    </FacebookShareButton>
+                </div>
+                <div className="social_share_redes">
+                    <WhatsappShareButton title="Sharing Content"url={url}>
+                        <WhatsappIcon logoFillColor="white" round={true} size="5ex"></WhatsappIcon>
+                    </WhatsappShareButton>
+                </div>
+                
             </div>
         </div>
     )
