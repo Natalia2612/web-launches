@@ -1,21 +1,26 @@
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Launch from './Launch'
 import Launches from './Launches'
-import fetchResult from '../services/Fetch';
 import {useEffect,useState} from 'react'
+import {fetchResult1,fetchResult2} from '../services/Fetch';
 function App() {
-
   const [launches,setLaunches] = useState([]);
+  const [launch,setLaunch] = useState({});
   useEffect(() => {
-    fetchResult()
+    fetchResult1()
       .then(data => {
-        //console.log(data)
-        setLaunches({launches:data})
+        setLaunches([...data])
+      }).catch((err) => {
+        console.log(err);
+      });
+
+      fetchResult2()
+      .then(data => {
+        setLaunch({...data})
       }).catch((err) => {
         console.log(err);
       });
   },[]);
-
   return (
     <div className="App">
       <header>
@@ -34,7 +39,12 @@ function App() {
             </div>
           }}>
           </Route>
-          <Route path="/launch" component={Launch}/>
+          <Route path="/launch" render ={() => {
+            return <div>
+                <Launch launch={launch}/>
+            </div>
+          }}>
+          </Route>
       </Router>
     </div>
   );

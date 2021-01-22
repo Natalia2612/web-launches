@@ -8,13 +8,26 @@
         background:var(--color_8);
     }
     span{
-        color:var(--color_4)
+        color:var(--color_4);
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 14px;
     }
-    .table__header{
+    .table__row{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        .table_th{
-            border-bottom: 1px solid var(--color_4);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        border-bottom: 1px solid var(--color_4);
+        margin-top: .2em;
+        &:last-child {
+            border-bottom: 0;
+        }   
+    }
+    button{
+        cursor: pointer;
+        outline: none;
+        background: var(--color_8);
+        color: var(--color_4);
+        &:hover{
+            color: var(--color_1);
         }
     }
 }
