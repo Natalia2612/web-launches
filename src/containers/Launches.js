@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react'
 const Launches=(props)=>{
    
    const [favorites, setFavorites] = useState([]);
-   
+
    const getArray = JSON.parse(localStorage.getItem('favorites') || '0');
    const addFav=(id)=>{
         //e.preventDefault();
@@ -11,7 +11,7 @@ const Launches=(props)=>{
         let addArray = true;
         array.forEach((item,i)=>{
             if(item===id){
-                array.splice(item,1);
+                array.splice(i,1);
                 addArray=false;
             }
         });
