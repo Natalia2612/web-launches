@@ -2,10 +2,11 @@
     width: 70%;
     background-image: linear-gradient(to right,var(--color_6) 0%, var(--color_7) 100%);
     &__container{
-        padding: 3em .5em 3em .5em;
+        padding: 1em .5em 1em .5em;
         width: 95%;
-        height: 70vh;
+        //height: 75%;
         background:var(--color_8);
+        margin-bottom: 1em;
     }
     span{
         color:var(--color_4);
@@ -14,7 +15,7 @@
     }
     .table__row{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 20% 1fr 1fr 14%;
         border-bottom: 1px solid var(--color_4);
         margin-top: .2em;
         &:last-child {
@@ -28,6 +29,32 @@
         color: var(--color_4);
         &:hover{
             color: var(--color_1);
+        }
+    }
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        .info_title{
+            font-size: 16px;
+        }
+        &__container{
+            width: 100%;
+        }
+        span{
+            font-size: 11px;
+        }
+    }
+    @media screen and (max-width: 300px) {
+        span{
+            font-size: 10px;
+        }
+        button{
+            font-size: 10px;
+        }
+        .table__row{
+            grid-column-gap: .5em;
+        }
+        &__container{
+            width: 100%;
         }
     }
 }

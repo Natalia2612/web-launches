@@ -12,7 +12,7 @@ const Launch=(props)=>{
     const startTimer =()=>{
         let date_utc =  Date.parse(props.launch.date_utc);
         const countdownDate = new Date(date_utc).getTime();
-
+        
         interval = setInterval(()=>{
             const now = new Date().getTime();
             const distance = countdownDate - now;
@@ -43,7 +43,7 @@ const Launch=(props)=>{
     });
     return (
         <div className="launch">
-            <h2>Upcoming: {props.launch.name}</h2>
+            <h2 className="info_title">Upcoming: {props.launch.name}</h2>
             <div className="launch__container">
                 <div>
                     <p>{timerDays}</p>
